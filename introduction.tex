@@ -1,0 +1,314 @@
+% Some commands used in this file
+\newcommand{\package}{\emph}
+\chapter{Ejercicios}
+\begin{enumerate}
+\item Sea $\Omega \subset \C$ un dominio. Pruebe que si $f$ es holomorfa en $\Omega$ con $\abs{f}$ constante, entonces $f$ es constante.
+\begin{proof}
+$\\$ Sea $f=u+\textbf{\textit{i}}v$ , tal que $\abs{f} = \abs{u+\textbf{\textit{i}}v} = \sqrt{u^2 + v^2}. \\ \\ $
+Partiendo del supuesto inicial que $\abs{f}$ es constante, se tendría entonces que $u^2+v^2=A$, donde A es una constante cualquiera.
+Se considerarán los casos $A=0$ y $A \neq 0.$
+\begin{itemize}[leftmargin=*]
+\item Si $A=0$ ya se tendría la demostración pues la única opción para que $A=0$ es que $u=0$ y $v=0$ pues $u^2+v^2=A$, es decir $u \geq 0$ y $v \geq 0. $ Por lo tanto, $f= u + \textbf{\textit{i}}v = 0$ lo cual es constante. 
+\item Si $A \neq 0$ y se consideran las derivadas parciales de $u^2 + v^2 = A$ se obtiene: 
+\begin{align}
+2u\frac{\partial u}{\partial x} + 2v\frac{\partial v}{\partial x} = \frac{\partial A}{\partial x} = 0 \nonumber \\ \nonumber \\ 
+2u\frac{\partial u}{\partial y} + 2v\frac{\partial v}{\partial y} = \frac{\partial A}{\partial y} = 0 \nonumber
+\intertext{Al tomar como factor común 2 en estas dos expresiones se obtiene lo siguiente:}
+u\frac{\partial u}{\partial x}+v\frac{\partial v}{\partial x} = \frac{\partial A}{\partial x} = \frac{0}{2}=0\\
+u\frac{\partial u}{\partial y} +v\frac{\partial v}{\partial y} = \frac{\partial A}{\partial y} = \frac{0}{2}=0
+\end{align}
+Como $f$ es holomorfa en $\Omega$ entonces se satisfacen las ecuaciones de Cauchy-Riemman, esto es:
+\begin{align}
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\ 
+\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} \\ \nonumber
+\end{align}
+Reemplazanado (0.3) y (0.4) en (0.1) y (0.2) respectivamente se obtiene:
+\begin{align}
+u\frac{\partial v}{\partial y} + v\frac{\partial v}{\partial x} = 0 \\
+-u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} = 0 \\ \nonumber
+\end{align}
+Se multiplicará la expresión (0.5) por $v$ y la expresión (0.6) por $u$, esto es:
+\begin{align}
+uv\frac{\partial v}{\partial y} + v^2\frac{\partial v}{\partial x}=0 \\
+-u^2\frac{\partial v}{\partial x} + uv\frac{\partial v}{\partial y}=0\\ \nonumber
+\end{align}
+Al igualar las ecuaciones (0.7) y (0.8) se obtiene: 
+\begin{align}
+uv\frac{\partial v}{\partial y} + v^2\frac{\partial v}{\partial x}=-u^2\frac{\partial v}{\partial x} + uv\frac{\partial v}{\partial y}
+\end{align}
+Se suman los términos de los dos lados de esta última igualdad, esto es:
+\begin{align}
+(u^2+v^2)\frac{\partial v}{\partial x}=0\\ \nonumber
+\end{align}
+Entonces, de la ecuación (0.10) se tiene que:
+\begin{align}
+u^2+v^2 = 0 \ \ \ \ \acute{o} \ \ \ \frac{\partial v}{\partial x} = 0 
+\end{align}
+Si $u^2+v^2 = 0$ , es decir considerando $A=0$ ya se obtuvo que la única forma es que $u=0$ y $v=0$ y por tanto $f=0$ lo cual es constante. \\ 
+Por otro lado, si $\frac{\partial v}{\partial x}=0, $ por las ecuaciones de Cauchy-Riemman se cumple también que:
+\begin{align*}
+\frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y} =0
+\end{align*}
+Reemplazando estos resultados en las derivadas parciales de $u^2+v^2=A$ se obtendría que:
+\begin{align*}
+\frac{\partial v}{\partial y} = 0 = \frac{\partial u}{\partial x}
+\end{align*}
+Es decir, $f'(z)=0$ y para que esto se de la única opción es que $f$ sea constante.
+\end{itemize}
+\end{proof}
+\item Verifique que la función $u: \R ^2 \longrightarrow \R$ definida por:
+\begin{align*}
+u(x,y)=e^{-x}(x\sin{y} - y\cos{y})
+\end{align*}
+es armónica. Halle $v$ tal que $f=u + \textbf{\textit{i}}v$ sea holomorfa.
+\begin{proof}
+Para verificar que la función $u: \R^2 \longrightarrow \R$ es armónica se debe probar que tiene derivadas parciales de segundo orden continuas y además que se satisface la ecuación de Laplace, esto es:
+\begin{align*}
+\bigtriangleup u &= 0 \\
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} &=0
+\intertext{Esto es, }
+\frac{\partial^2 u}{\partial x^2} &= -\frac{\partial^2 u}{\partial y^2}
+\end{align*}
+A continuación se obtendrán las derivadas de primer y segundo orden de la función u: \\
+Primero se obtendrán las derivadas de primer y segundo orden con respecto a x:
+\begin{align*}
+\frac{\partial u}{\partial x} &= e^{-x}\sin{y}-xe^{-x}\sin{y}+ye^{-x}\cos{y}\\
+\frac{\partial^2 u}{\partial x^2} &= -e^{-x}\sin{y}-e^{-x}\sin{y}+xe^{-x}\sin{y}-ye^{-x}\cos{y}\\
+\frac{\partial^2 u}{\partial x^2} &= -2e^{-x}\sin{y}+xe^{-x}\sin{y}-ye^{-x}\cos{y}
+\intertext{Y ahora se obtendrán con respecto a y:}
+\frac{\partial u}{\partial y} &= xe^{-x}\cos{y}-e^{-x}\cos{y}+ye^{-x}\sin{y}\\
+\frac{\partial^2 u}{\partial y^2} &= -xe^{-x}\sin{y}+e^{-x}\sin{y}+e^{-x}\sin{y}+ye^{-x}\cos{y}\\
+\frac{\partial^2 u}{\partial y^2} &=2e^{-x}\sin{y}-xe^{-x}\sin{y}+ye^{-x}\cos{y}
+\end{align*}
+De las derivadas parciales de u se observa que se satisface que son continuas, ahora se comprobará que se satisface la ecuación de Laplace:
+\begin{align*}
+\frac{\partial^2 u}{\partial x^2} &= -\frac{\partial^2 u}{\partial y^2} \\
+-2e^{-x}\sin{y}+xe^{-x}\sin{y}-ye^{-x}\cos{y} &= -(2e^{-x}\sin{y}-xe^{-x}\sin{y}+ye^{-x}\cos{y})\\
+-2e^{-x}\sin{y}+xe^{-x}\sin{y}-ye^{-x}\cos{y} &=-2e^{-x}\sin{y}+xe^{-x}\sin{y}-ye^{-x}\cos{y}\\
+\end{align*}
+Y de esta forma, se comprueba que también se satisface la ecuación de Laplace y así las condiciones necesarias para comprobar que u es armónica.\\
+Para hallar $v$ de tal forma que $f=u+\textbf{\textit{i}}v$ sea holomorfa, se debe hallar la función armónica conjugada de u. \\ 
+Como el próposito de esta función $f$ es que sea holomorfa, esta función armónica debe cumplir las ecuaciones de Cauchy-Riemman. \\
+Esto es,
+\begin{align}
+\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+\frac{\partial u}{\partial y} &=-\frac{\partial v}{\partial x}
+\end{align}
+De la expresión (0.12) es posible obtener $v$ como se muestra a continuación:
+\begin{align}
+v &=\int \frac{\partial u}{\partial x}\ dy \nonumber \\
+v &=\int (e^{-x}\sin{y}-xe^{-x}\sin{y}+ye^{-x}\cos{y})\ dy \nonumber \\
+v &=xe^{-x}\cos{y}+ye^{-x}\sin{y}+h(x)
+\end{align}
+A continuación se derivará la expresión (0.14) con respecto a x y con la segunda condición de las ecuaciones de Cauchy-Riemman, es decir la expresión (0.13) se hallará $h(x)$. \\
+\begin{align}
+\frac{\partial v}{\partial x} &= e^{-x}\cos{y} -xe^{-x}\cos{y}-ye^{-x}\sin{y}+h'(x)
+\end{align}
+Y por la condición de Cauchy-Riemman se debe cumplir que: 
+\begin{align}
+\frac{\partial v}{\partial x} &= -\frac{\partial u}{\partial y}
+\end{align}
+Pero ya se había obtenido que: \\
+\begin{align}
+\frac{\partial u}{\partial y} &= xe^{-x}\cos{y}-e^{-x}\cos{y}+ye^{-x}\sin{y}
+\end{align}
+Reemplazando (0.17) en (0.16) y (0.15) en (0.16) se obtiene:
+\begin{align*}
+e^{-x}\cos{y} -xe^{-x}\cos{y}-ye^{-x}\sin{y}+h'(x)=-(xe^{-x}\cos{y}-e^{-x}\cos{y}+ye^{-x}\sin{y})
+\end{align*}
+De lo cual se obtiene que: \\
+\begin{align*} 
+h'(x)=0
+\intertext{Por lo que:}
+h(x)=A, \ \ \ \ \ \  A \in \R.
+\end{align*}
+Y así la armónica conjugada $v$ de $u$ es:
+\begin{align*}
+v =xe^{-x}\cos{y}+ye^{-x}\sin{y}+A    
+\end{align*}
+Donde $u$ y $v$ son continuas en todo $\R^2$ y por tanto $f=u+\textbf{\textit{i}}v$ es holomorfa.
+\end{proof}
+\item Sea $D = B(0_{\R^2},2) \backslash \{0_{\R^2}\}.$ Considere la función $u:\textbf{D} \longrightarrow \R$ definida por $u(x,y) = \log{(x^2+y^2)}.$ Muestre que $u$ es armónica en $\textbf{D}$ y que $u$ no tiene una armónica conjugada en $\textbf{D}.$
+\begin{proof}
+Para verificar que u es armónica en D se debe probar que tiene derivadas parciales de segundo orden continuas y además que se satisface la ecuación de Laplace, esto es:
+\begin{align*}
+\bigtriangleup u &= 0 
+\end{align*}
+Por la definición de u y el dominio en el que está definida se observa que tiene derivadas de segundo orden continuas por lo que se procederá a probar que se satisface la ecuación de Laplace.\\
+Reescribiendo la ecuación de Laplace se tiene:
+\begin{align}
+\frac{\partial^2 u}{\partial x^2}=-\frac{\partial^2 u}{\partial y^2}
+\end{align}
+A continuación se obtendrán las derivadas de primer y segundo orden para luego comprobar que se satisface la ecuación de Laplace.
+\begin{align}
+\frac{\partial u}{\partial x} &= \frac{2x}{x^2+y^2} \nonumber \\
+\frac{\partial^2 u}{\partial x^2} &= \frac{2(y^2-x^2)}{(x^2+y^2)^2}
+\intertext{Por otro lado,} \nonumber
+\frac{\partial u}{\partial y} &= \frac{2y}{x^2+y^2} \nonumber \\
+\frac{\partial^2 u}{\partial y^2} &=
+\frac{2(x^2-y^2)}{(x^2+y^2)^2}
+\end{align}
+Reemplazando la expresión (0.19) y (0.20) en (0.18) se obtiene: 
+\begin{align*}
+\frac{2(y^2-x^2)}{(x^2+y^2)^2}=-\frac{2(x^2-y^2)}{(x^2+y^2)^2}
+\end{align*}\\ \\ 
+Y así al probar que se cumplen las dos condiciones para que una función sea armónica se obtiene entonces que en efecto u es armónica en D.\\
+Por otro lado, de existir una conjugada armónica de $u$ se deberían satisfacer las ecuaciones de Cauchy-Riemman. Se pretende llegar a una contradicción asumiendo que si existe una armónica conjugada de $u$ en $D$. \\
+Esto es, 
+\begin{align}
+\frac{\partial u}{\partial x} &= \frac{\partial v}{\partial y}\\
+\frac{\partial u}{\partial y} &= -\frac{\partial v}{\partial x}
+\end{align}
+Se obtendrá $v$ a partir de la expresión (0.21), esto es:
+\begin{align}
+v&=\int \frac{\partial u}{\partial x} \ \ dy \nonumber \\
+v&=\int \frac{2x}{x^2+y^2} \ \ dy
+\end{align}
+Esta integral se resolverá por sustitución trigonometrica, realizando las siguientes sustituciones:
+\begin{align}
+y&=x\tan{z} \\
+dy&=x\sec^2{z} \ \ dz
+\end{align}
+Al sustituir la expresión (0.24) y (0.25) en la expresión (0.23) se obtiene lo siguiente: 
+\begin{align}
+v=\int \frac{2x(x\sec^2{z})dz}{x^2(1+\tan^2{z})}
+\end{align}
+Para proceder con la integral se considerará la identidad trigonométrica siguiente:
+\begin{align}
+1+\tan^2{z}=sec^2{z}
+\end{align}
+Y de esta forma, al reemplazar la expresión (0.27) en la expresión (0.26) se obtiene: 
+\begin{align*}
+v&=\int 2 \ \ dz\\
+v&=2z+h(x)
+\end{align*}
+De la expresión (0.24) se despejará $z$ como se presenta a continuación: 
+\begin{align*}
+z=\arctan (\frac{y}{x})    
+\end{align*}
+Y entonces,
+\begin{align}
+v=2\arctan (\frac{y}{x}) +h(x)
+\end{align}
+Con el supuesto de armónica conjugada también se debe satisfacer la otra ecuación de Cauchy-Riemman, esto es:
+\begin{align}
+\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+\end{align}
+A continuación se derivará la expresión (0.28) con respecto a x, esto es: 
+\begin{align}
+\frac{\partial v}{\partial x}=\frac{-2y}{x^2+y^2}+h'(x)
+\end{align}
+Al reemplazar la expresión (0.30) en la expresión (0.29) se obtiene:
+\begin{align}
+-(\frac{-2y}{x^2+y^2}+h'(x))=\frac{\partial u}{\partial y}
+\end{align}
+Pero $\frac{\partial u}{\partial y}$ ya se había obtenido,
+\begin{align*}
+\frac{\partial u}{\partial y} = \frac{2y}{x^2+y^2}
+\intertext{Al reemplazar esta expresión en (0.31) se obtiene lo siguiente:}
+-(\frac{-2y}{x^2+y^2}+h'(x))=\frac{2y}{x^2+y^2}
+\end{align*}
+De aquí se obtiene $h'(x)=0.$\\ \\
+Sí $h'(x)=0$ entonces se sigue que $h(x)=C$ donde $C$ es la constante de integración.
+Y finalmente: 
+\begin{align*}
+v=\int \frac{2x}{x^2+y^2} \ dy = 2 \arctan (\frac{y}{x})+C
+\end{align*}
+Y entonces para que $v$ sea armónica conjugada de $u$ debe ser de la forma:
+\begin{align*}
+v=\arctan (\frac{y}{x})+C
+\end{align*}
+Pero, a pesar que $v$ satisface las ecuaciones de Cauchy-Riemman no es posible que sea una armónica conjugada pues en el dominio definido la función $v$ presenta discontinuidades $\forall x =0 \in \textbf{\textit{D}}$ lo cual significaría que $v$ no seria diferenciable en todo el dominio y por tanto $f=u+\textbf{\textit{i}}v$ no sería holomorfa. \\ \\
+A continuación se mostrará una solución alternativa para demostrar que $u$ no tiene armónica conjugada en \textbf{D} la cual es presentada en el texto \textit{Complex Analysis de John Duncan}.\\ 
+Para esta solución alternativa se procederá nuevamente por contradicción, es decir suponiendo que si existe una armónica conjugada de $u$ en $D$.\\ Además se utilizará una función auxiliar $g$. Se define $g: [0,2\pi] \longrightarrow \R.$ como: 
+\begin{align*}
+g(t)=v(\cos{t},\sin{t}) \ \ \ t \in [0,2\pi]
+\end{align*}
+Se observa que $g \in C_{R}([0,2\pi])$, donde $C_{R}$ denota el conjunto de todas las funciones continuas en ese intervalo, con $g(0) = g(2\pi)$ por la periodicidad en los complejos.\\
+Al derivar esta expresión teniendo en cuenta la regla de la cadena se obtiene:
+\begin{align*}
+g'(t)=\frac{\partial v}{\partial x}(\cos{t},\sin{t})(-\sin{t})+\frac{\partial v}{\partial y}(\cos{t},\sin{t})(\cos{t})
+\end{align*}
+Como el supuesto es que u y v son armónicas, con u armónica conjugada de u, entonces se deben cumplir las ecuaciones de Cauchy-Riemman, esto es:
+\begin{align*}
+\frac{\partial v}{\partial x} &= - \frac{\partial u}{\partial y} \\
+\frac{\partial v}{\partial y} &=  \frac{\partial u}{\partial x} 
+\end{align*}
+Y por tanto: 
+\begin{align}
+g'(t)=-\frac{\partial u}{\partial y}(\cos{t},\sin{t})(-\sin{t})+\frac{\partial u}{\partial x}(\cos{t},\sin{t})(\cos{t})\\\nonumber
+\end{align}
+A continuación se encontrarán cada uno de los terminos de la expresión (0.21), esto es:
+\begin{align}
+\frac{\partial u}{\partial y}(\cos{t},\sin{t})&=\frac{2\sin{t}}{\cos^2{t}+\sin^2{t}}\\
+\frac{\partial u}{\partial x}(\cos{t},\sin{t})&=\frac{2\cos{t}}{\cos^2{t}+\sin^2{t}}
+\end{align}
+Al reemplazar las expresiones (0.22) y (0.23) en la expresión (0.21) se obtiene:
+\begin{align}
+g'(t)=\frac{2\sin^2{t}}{\cos^2{t}+\sin^2{t}}+\frac{2\cos^2{t}}{\cos^2{t}+\sin^2{t}}
+\end{align}
+Simplificando esta expresión con las identidades trigonométricas conocidas se obtiene:
+\begin{align}
+g'(t)=2 \ \ \ \ t\in[0,2\pi]
+\end{align}
+Se integrará la expresión (0.25) para obtener $g(t)$, esto es:
+\begin{align}
+g(t) = 2t + C \ \ \ \ t\in[0,2\pi]
+\end{align}
+Donde C corresponde a la constante de integración.
+Nótese que $g(0) \neq g(2\pi)$. Lo cual resulta en la contradicción que se estaba buscando y la cual permite mostrar que no hay conjugada armónica de $u$ en $D$.\\
+Esta solución alternativa se basa en los resultados obtenidos en el libro guía.
+\end{proof}
+\item Sean $a,b \in \R$ con $a < b.$ Se dice que $\gamma: [a,b] \longrightarrow \C$ es de $\textbf{variación acotada}$ en $[a,b]$ si existe $M>0$ tal que: \\
+\begin{align*}
+\sum_{j=1}^{n} \abs{\gamma(t_j)-\gamma(t_{j-1})} \leq M
+\end{align*}
+para toda partición $\textbf{P} = \{ a=t_0 < t1 < \cdots < t_n = b \} $ de $[a,b].$ \\
+Pruebe que $\gamma$ es de variación acotada en $[a,b]$ si y sólo si $\operatorname{Re} \gamma $ y $\operatorname{Im} \gamma$ son de variación acotada en $[a,b].$
+\begin{proof}
+$\\ \Longrightarrow$ Supóngase que $\gamma$ es de variación acotada en $[a,b]$ para cualquier partición p en este intervalo, entonces según la definición:
+\begin{align}
+\sum_{j=1}^{n} \abs{\gamma(t_j)-\gamma(t_{j-1})} \leq M
+\end{align}
+Como $\gamma: [a,b] \longrightarrow \C$ entonces: 
+\begin{align}
+\gamma = a + \textbf{\textit{i}}b = \operatorname{Re}\gamma + \textbf{\textit{i}}\operatorname{Im}\gamma
+\end{align}
+Además de las propiedades del valor absoluto se tiene que: 
+\begin{align*}
+\abs{\gamma} \geqslant \abs{\operatorname{Re}\gamma} \ \ y \ \  \abs{\gamma} \geqslant \abs{\operatorname{Im}\gamma} 
+\end{align*}
+Y así, para este caso se tiene lo siguiente:
+\begin{align*}
+\sum_{j=1}^{n} \abs{\operatorname{Re}\gamma(t_j) - \operatorname{Re}\gamma(t_{j-1})} \leq \sum_{j=1}^{n} \abs{\gamma(t_j)-\gamma(t_{j-1})} \leq M \\
+\sum_{j=1}^{n} \abs{\operatorname{Im}\gamma(t_j) - \operatorname{Im}\gamma(t_{j-1})} \leq \sum_{j=1}^{n} \abs{\gamma(t_j)-\gamma(t_{j-1})} \leq M
+\end{align*}
+Lo cual implica que si $\gamma$ es de variación acotada, $\operatorname{Re}\gamma$ y $\operatorname{Im}\gamma$ deben serlo también.\\
+$\Longleftarrow$ Supóngase que $\operatorname{Re}\gamma$ y $\operatorname{Im}\gamma$ son de variación acotada en $[a,b]$ para cualquier p en este intervalo, esto es:
+\begin{align*}
+\sum_{j=1}^{n} \abs{\operatorname{Re}\gamma(t_j) - \operatorname{Re}\gamma(t_{j-1})} \leq M_{1}\\
+\sum_{j=1}^{n}  \abs{\operatorname{Im}\gamma(t_j) - \operatorname{Im}\gamma(t_{j-1})} \leq M_{2}
+\intertext{Definase,} M_{1} = \frac{M}{2} \ \  y \ \ M_{2} = \frac{M}{2}
+\end{align*}
+Esto es,
+\begin{align}
+\sum_{j=1}^{n} \abs{\operatorname{Re}\gamma(t_j) - \operatorname{Re}\gamma(t_{j-1})} \leq \frac{M}{2}\\
+\sum_{j=1}^{n}  \abs{\operatorname{Im}\gamma(t_j) - \operatorname{Im}\gamma(t_{j-1})} \leq \frac{M}{2}\\ \nonumber
+\end{align}
+Nuevamente, como $\gamma: [a,b] \longrightarrow \C$ entonces $\gamma=a+\textbf{\textit{i}}b=\operatorname{Re}\gamma + \textbf{\textit{i}}\operatorname{Im}\gamma$.\\
+Además, considerando la siguiente propiedad del valor absoluto: 
+\begin{align}
+\abs{\gamma} \leq \abs{\operatorname{Re}\gamma} + \abs{\operatorname{Im}\gamma}
+\end{align}
+Al reescribir la expresión (0.16) se obtiene:
+\begin{align*}
+\sum_{j=1}^{n} \abs{\gamma(t_j)-\gamma(t_{j-1})} &\leq \sum_{j=1}^{n}\abs{\operatorname{Re}\gamma(t_j)-\operatorname{Re}\gamma(t_{j-1})} + \sum_{j=1}^{n}\abs{\operatorname{Im}\gamma(t_j)-\operatorname{Im}\gamma(t_{j-1})} \\
+&\leq \frac{M}{2} + \frac{M}{2} \\
+&\leq M \\
+\end{align*}
+Lo cual demuestra que si $\operatorname{Re} \gamma $ y $\operatorname{Im} \gamma $ son de variación acotada entonces $\gamma$ también lo es.
+\end{proof}
+\end{enumerate}
+
+
+
